@@ -1,0 +1,19 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  &__nav-element {
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

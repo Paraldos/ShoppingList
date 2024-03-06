@@ -1,0 +1,9 @@
+{
+  "name": "shoppinglist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch ./private/scss/styles.scss ./public/styles.css"
+  }
+}
