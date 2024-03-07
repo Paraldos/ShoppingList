@@ -27,16 +27,20 @@
     justify-content: center;
     align-items: center; }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+.tabs {
+  display: none; }
 
 .list {
   padding: 30px;
   width: 100%;
   max-width: 600px;
   margin: auto;
-  list-style: none; }
+  list-style: none;
+  background-color: red; }
   .list__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 30px; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
