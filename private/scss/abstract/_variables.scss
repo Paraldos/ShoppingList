@@ -1,4 +1,6 @@
 * {
+  --nav-height: 80px;
+
   --primary-color: #363062;
   --secondary-color: #435585;
   --tertiary-color: #818fb4;
@@ -8,4 +10,6 @@
   --color-text: var(--quaternary-color);
 
   --color-navbar: var(--primary-color);
+
+  --color-list-background: var(--tertiary-color);
 }

@@ -1,9 +1,15 @@
 .list {
   padding: 30px;
+  padding-bottom: var(--nav-height);
   width: 100%;
+  min-height: 100vh;
   max-width: 600px;
   margin: auto;
   list-style: none;
+  background-color: var(--color-list-background);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
   &__item {
     display: grid;
@@ -18,6 +24,7 @@
   &__done-btn {
     border: none;
     transition: transform 0.2s;
+    background-color: transparent;
 
     &:hover {
       cursor: pointer;
