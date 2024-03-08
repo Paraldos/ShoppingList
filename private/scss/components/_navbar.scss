@@ -8,6 +8,8 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-navbar);
+  border-top: 3px solid var(--color-text);
 
   &__nav-element {
     height: 100%;
@@ -15,5 +17,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-text);
+      color: var(--color-background);
+    }
   }
 }

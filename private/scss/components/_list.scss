@@ -9,5 +9,19 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 30px;
+
+    &--done {
+      text-decoration: line-through;
+    }
+  }
+
+  &__done-btn {
+    border: none;
+    transition: transform 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.5);
+    }
   }
 }

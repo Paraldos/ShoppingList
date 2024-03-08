@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Shopping List</title>
     <link rel="stylesheet" href="./styles.css">
+    <script
+      defer
+      src="https://kit.fontawesome.com/12bc7dd6b9.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 <body>
     <ul class="list">
         <li class="list__item">
             <p>Amount</p>
             <p>Description</p>
-            <button>Done</button>
+            <button class="list__done-btn"><i class="fa-solid fa-check"></i></button>
         </li>
     </ul>
     <div class="tabs">
         Tabs
     </div>
     <nav class="navbar">
-        <div class="navbar__nav-element">
+        <button class="navbar__nav-element">
             O1
-        </div>
-        <div class="navbar__nav-element">
+        </button>
+        <button class="navbar__nav-element">
             O2
-        </div>
+        </button>
     </div>
 </body>
 </html>
