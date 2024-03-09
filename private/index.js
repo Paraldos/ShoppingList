@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import Navbar from "./components/navbar";
 
 const App = () => {
-  return <h1>Hello, React is working!</h1>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = document.getElementById("root");
+createRoot(root).render(<App />);
