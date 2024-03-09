@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-navbar);
-  border-top: 3px solid var(--color-text);
+  background-color: var(--color-navbar__background);
+  border-top: 3px solid var(--color-navbar__border);
 
   &__nav-element {
     height: 100%;

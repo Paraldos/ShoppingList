@@ -4,10 +4,11 @@
   --color-200: #435585;
   --color-300: #818fb4;
   --color-400: #f5e8c7;
-  --color-background: var(--color-200);
-  --color-text: var(--color-400);
-  --color-navbar: var(--color-100);
-  --color-list-background: var(--color-300); }
+  --color-main__background: var(--color-200);
+  --color-main__text: var(--color-400);
+  --color-navbar__background: var(--color-100);
+  --color-navbar__border: var(--color-400);
+  --color-list__background: var(--color-300); }
 
 *,
 *::before,
@@ -16,12 +17,12 @@
   margin: 0;
   padding: 0;
   font-size: 20px;
-  color: var(--color-text); }
+  color: var(--color-main__text); }
 
 body {
   font-size: 20px;
   scroll-behavior: smooth;
-  background-color: var(--color-background); }
+  background-color: var(--color-main__background); }
 
 .navbar {
   position: absolute;
@@ -32,8 +33,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-navbar);
-  border-top: 3px solid var(--color-text); }
+  background-color: var(--color-navbar__background);
+  border-top: 3px solid var(--color-navbar__border); }
   .navbar__nav-element {
     height: 100%;
     aspect-ratio: 1;
@@ -58,7 +59,7 @@ body {
   max-width: 600px;
   margin: auto;
   list-style: none;
-  background-color: var(--color-list-background);
+  background-color: var(--color-list__background);
   display: flex;
   flex-direction: column;
   gap: 10px; }
