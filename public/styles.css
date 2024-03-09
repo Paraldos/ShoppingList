@@ -24,6 +24,9 @@ body {
   scroll-behavior: smooth;
   background-color: var(--color-main__background); }
 
+.invisible {
+  display: none; }
+
 .navbar {
   position: absolute;
   left: 0;

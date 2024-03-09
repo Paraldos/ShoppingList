@@ -1,16 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import SignIn from "./SignIn";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar__nav-element">
-        <FontAwesomeIcon icon={faHome} />
-      </div>
-      <div className="navbar__nav-element">
-        <FontAwesomeIcon icon={faHome} />
-      </div>
+      <SignIn />
       <div className="navbar__nav-element">
         <FontAwesomeIcon icon={faHome} />
       </div>

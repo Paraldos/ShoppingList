@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import Navbar from "./components/navbar";
 import { db } from "./firebase/firebase.js";
 import { ref, get } from "firebase/database";
+import Navbar from "./components/navbar";
+import SignIn from "./components/SignIn.js";
 
 const App = () => {
   useEffect(() => {
@@ -19,7 +20,6 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <p>Hello World!</p>
     </div>
   );
 };
