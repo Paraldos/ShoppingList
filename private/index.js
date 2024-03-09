@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import Navbar from "./components/navbar";
-import { db } from "./firebase.js";
+import { db } from "./firebase/firebase.js";
 import { ref, get } from "firebase/database";
 
 const App = () => {
