@@ -1,15 +1,15 @@
 * {
   --nav-height: 80px;
 
-  --primary-color: #363062;
-  --secondary-color: #435585;
-  --tertiary-color: #818fb4;
-  --quaternary-color: #f5e8c7;
+  --color-100: #363062;
+  --color-200: #435585;
+  --color-300: #818fb4;
+  --color-400: #f5e8c7;
 
-  --color-background: var(--secondary-color);
-  --color-text: var(--quaternary-color);
+  --color-background: var(--color-200);
+  --color-text: var(--color-400);
 
-  --color-navbar: var(--primary-color);
+  --color-navbar: var(--color-100);
 
-  --color-list-background: var(--tertiary-color);
+  --color-list-background: var(--color-300);
 }
