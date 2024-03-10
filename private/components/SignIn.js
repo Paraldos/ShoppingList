@@ -53,9 +53,9 @@ const SignIn = () => {
   }
 
   return (
-    <div className="navbar__nav-element" onClick={clickListener}>
+    <button className="navbar__nav-element" onClick={clickListener}>
       <FontAwesomeIcon icon={isLoggedIn ? faCircleXmark : faRightToBracket} />
-    </div>
+    </button>
   );
 };
 

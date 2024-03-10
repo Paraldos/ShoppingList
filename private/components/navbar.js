@@ -7,9 +7,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <SignIn />
-      <div className="navbar__nav-element">
+      <button className="navbar__nav-element">
         <FontAwesomeIcon icon={faHome} />
-      </div>
+      </button>
     </nav>
   );
 };

@@ -1,3 +1,17 @@
+.lists {
+  padding: 30px;
+  padding-bottom: var(--nav-height);
+  width: 100%;
+  min-height: 100vh;
+  max-width: 600px;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--color-lists__background);
+}
+
 .list {
   padding: 30px;
   padding-bottom: var(--nav-height);
