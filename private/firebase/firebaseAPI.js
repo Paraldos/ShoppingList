@@ -1,39 +1,55 @@
 import { db } from "./firebase.js";
 import { ref, set, push, update } from "firebase/database";
 
-export const addUser = async (uid, displayName) => {
-  await set(ref(db, `users/${uid}`), {
-    userId: uid,
-    displayName: displayName,
-    subscribedLists: [],
-  });
-};
+class FirebaseAPI {
+  constructor() {
+    this.currentUser = null;
+  }
 
-export const addList = async (createdBy) => {
-  const newListRef = push(ref(db, "lists"));
-  await set(newListRef, {
-    listName: "New List",
-    createdBy: createdBy,
-    subscribers: {
-      [createdBy]: true,
-    },
-  });
-  return newListRef.key;
-};
+  setCurrentUser(user) {
+    this.currentUser = user;
+  }
 
-// Function to subscribe a user to a list
-export const subscribeToList = async (userId, listId) => {
-  const userRef = ref(db, `users/${userId}/subscribedLists`);
-  await update(userRef, { [listId]: true });
-};
+  getCurrentUser() {
+    return this.currentUser;
+  }
 
-// Function to add an item to a list
-export const addItemToList = async (listId, description, amount) => {
-  const newItemRef = push(ref(db, `lists/${listId}/items`));
-  await set(newItemRef, {
-    description,
-    amount,
-    status: "not done",
-  });
-  return newItemRef.key;
-};
+  async addUser(uid, displayName) {
+    await set(ref(db, `users/${uid}`), {
+      userId: uid,
+      displayName: displayName,
+      subscribedLists: [],
+    });
+  }
+
+  async addList(createdBy) {
+    const newListRef = push(ref(db, "lists"));
+    await set(newListRef, {
+      listName: "New List",
+      createdBy: createdBy,
+      subscribers: {
+        [createdBy]: true,
+      },
+    });
+    this.subscribeToList(createdBy, newListRef.key);
+    return newListRef.key;
+  }
+
+  async subscribeToList(userId, listId) {
+    const userRef = ref(db, `users/${userId}/subscribedLists`);
+    await update(userRef, { [listId]: true });
+  }
+
+  async addItemToList(listId, description, amount) {
+    const newItemRef = push(ref(db, `lists/${listId}/items`));
+    await set(newItemRef, {
+      description,
+      amount,
+      status: "not done",
+    });
+    return newItemRef.key;
+  }
+}
+
+const firebaseAPI = new FirebaseAPI();
+export default firebaseAPI;

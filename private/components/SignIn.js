@@ -5,9 +5,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { db, auth } from "../firebase/firebase.js";
 import { get, ref } from "firebase/database";
-import { addUser } from "../firebase/firebaseAPI.js";
+import { db, auth } from "../firebase/firebase.js";
+import firebaseAPI from "../firebase/firebaseAPI.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRightToBracket,
@@ -20,6 +20,7 @@ const SignIn = () => {
 
   onAuthStateChanged(auth, (user) => {
     setIsLoggedIn(!!user);
+    firebaseAPI.setCurrentUser(user);
   });
 
   const clickListener = () => {
@@ -33,7 +34,7 @@ const SignIn = () => {
         const userRef = ref(db, `users/${user.uid}`);
         const snapshot = await get(userRef);
         if (!snapshot.exists()) {
-          addUser(user.uid, user.displayName);
+          firebaseAPI.addUser(user.uid, user.displayName);
           console.log(`User ${user.displayName} added to the database.`);
         } else {
           console.log(`User ${user.displayName} logged in successfully.`);
