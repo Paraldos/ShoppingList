@@ -5,9 +5,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const Lists = () => {
   return (
     <div className="lists">
-      <h1>Lists</h1>
-      <button>
-        Add New List <FontAwesomeIcon icon={faPlus} />
+      <button className="lists__add-new-btn">
+        <FontAwesomeIcon icon={faPlus} />
       </button>
     </div>
   );
