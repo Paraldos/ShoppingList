@@ -5,7 +5,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { auth } from "../firebase/firebase.js";
+import { db, auth } from "../firebase/firebase.js";
+import { get, ref } from "firebase/database";
+import { addUser } from "../firebase/firebaseAPI.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRightToBracket,
@@ -26,9 +28,16 @@ const SignIn = () => {
 
   function logIn() {
     signInWithPopup(auth, provider)
-      .then((result) => {
+      .then(async (result) => {
         const user = result.user;
-        console.log(`User ${user.displayName} logged in successfully.`);
+        const userRef = ref(db, `users/${user.uid}`);
+        const snapshot = await get(userRef);
+        if (!snapshot.exists()) {
+          addUser(user.uid, user.displayName);
+          console.log(`User ${user.displayName} added to the database.`);
+        } else {
+          console.log(`User ${user.displayName} logged in successfully.`);
+        }
       })
       .catch((error) => displayError(error));
   }
