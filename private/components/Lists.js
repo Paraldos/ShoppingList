@@ -8,6 +8,10 @@ const Lists = () => {
     firebaseAPI.addList(firebaseAPI.getCurrentUser().uid);
   };
 
+  window.addEventListener("userIsSet", async () => {
+    firebaseAPI.getSubscribedLists();
+  });
+
   return (
     <div className="lists">
       <button className="lists__add-new-btn" onClick={clickListener}>

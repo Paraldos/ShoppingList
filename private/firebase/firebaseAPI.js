@@ -1,3 +1,4 @@
+import { get } from "lodash";
 import { db } from "./firebase.js";
 import { ref, set, push, update } from "firebase/database";
 
@@ -8,6 +9,9 @@ class FirebaseAPI {
 
   setCurrentUser(user) {
     this.currentUser = user;
+    if (user) {
+      window.dispatchEvent(new Event("userIsSet"));
+    }
   }
 
   getCurrentUser() {
@@ -33,6 +37,11 @@ class FirebaseAPI {
     });
     this.subscribeToList(createdBy, newListRef.key);
     return newListRef.key;
+  }
+
+  async getSubscribedLists() {
+    const userRef = ref(db, `users/${this.currentUser.uid}/subscribedLists`);
+    console.log(this.currentUser);
   }
 
   async subscribeToList(userId, listId) {
