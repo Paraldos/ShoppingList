@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: var(--color-main__text);
+}
+
+body {
+  font-size: 20px;
+  scroll-behavior: smooth;
+  background-color: var(--color-main__background);
+}
+
+.invisible {
+  display: none;
+}
