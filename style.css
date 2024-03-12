@@ -40,18 +40,30 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   color: var(--color-btn__text);
-}
-button svg {
   transition: transform 0.2s ease-in-out;
-  color: var(--color-btn__text);
 }
 button:hover {
   cursor: pointer;
-}
-button:hover svg {
   transform: scale(1.5);
+}
+
+.nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--color-navbar__background);
+  border-top: 3px solid var(--color-navbar__border);
+}
+.nav__nav-element {
+  height: 50%;
+  aspect-ratio: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,19 +4,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   color: var(--color-btn__text);
-
-  svg {
-    transition: transform 0.2s ease-in-out;
-    color: var(--color-btn__text);
-  }
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-
-    svg {
-      transform: scale(1.5);
-    }
+    transform: scale(1.5);
   }
 }

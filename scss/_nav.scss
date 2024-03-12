@@ -1,0 +1,18 @@
+.nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--color-navbar__background);
+  border-top: 3px solid var(--color-navbar__border);
+
+  &__nav-element {
+    height: 50%;
+    aspect-ratio: 1;
+  }
+}
