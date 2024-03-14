@@ -1,2 +1,3 @@
-import firebaseAPI from "./scripts/firebaseAPI.js";
-firebaseAPI.hello();
+import Nav from "./scripts/nav.js";
+
+new Nav();
