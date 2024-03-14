@@ -10,9 +10,5 @@
   gap: 40px;
   background-color: var(--color-navbar__background);
   border-top: 3px solid var(--color-navbar__border);
-
-  &__nav-element {
-    height: 50%;
-    aspect-ratio: 1;
-  }
+  padding: 20px;
 }

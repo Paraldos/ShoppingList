@@ -35,16 +35,21 @@ body {
 }
 
 button {
-  border: none;
+  --transition-time: 0.2s;
+  color: var(--color-btn__text);
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-btn__text);
-  transition: transform 0.2s ease-in-out;
+  height: 100%;
+  width: fit-content;
+  aspect-ratio: 1/1;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-time) ease-in-out;
 }
 button:hover {
-  cursor: pointer;
   transform: scale(1.5);
 }
 
@@ -60,10 +65,7 @@ button:hover {
   gap: 40px;
   background-color: var(--color-navbar__background);
   border-top: 3px solid var(--color-navbar__border);
-}
-.nav__nav-element {
-  height: 50%;
-  aspect-ratio: 1;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
