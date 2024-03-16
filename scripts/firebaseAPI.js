@@ -14,6 +14,10 @@ class FirebaseAPI {
       throw error;
     }
   }
+
+  getCurrentUser() {
+    return auth.currentUser;
+  }
 }
 
 const firebaseAPI = new FirebaseAPI();
