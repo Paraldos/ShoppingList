@@ -40,6 +40,10 @@ button:hover {
   padding-top: 30px;
 }
 
+.list {
+  background-color: red;
+  margin-bottom: 10px;
+}
 .list__element {
   display: grid;
   grid-template-columns: 60px 1fr 30px 30px;

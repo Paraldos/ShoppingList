@@ -1,4 +1,7 @@
 .list {
+  background-color: red;
+  margin-bottom: 10px;
+
   &__element {
     display: grid;
     grid-template-columns: 60px 1fr 30px 30px;

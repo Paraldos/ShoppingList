@@ -1,6 +1,11 @@
 import { db, auth } from "./firebase.js";
 
 class FirebaseAPI {
+  constructor() {
+    this.user = this.getCurrentUser();
+    this.lists = this.getListsData();
+  }
+
   async login() {
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -16,8 +21,31 @@ class FirebaseAPI {
   }
 
   getCurrentUser() {
-    return auth.currentUser;
+    return new Promise((resolve, reject) => {
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        unsubscribe();
+        resolve(user);
+      }, reject);
+    });
   }
+
+  async read(path) {
+    const snapshot = await db.ref(path).once("value");
+    return snapshot.val();
+  }
+
+  async getUserData() {
+    const user = await this.getCurrentUser();
+    const snapshot = await db.ref(`users/${user.uid}`).once("value");
+    return snapshot.val();
+  }
+
+  async getListsData() {
+    const lists = await this.read("lists/");
+    return lists;
+  }
+
+  async getUserLists() {}
 }
 
 const firebaseAPI = new FirebaseAPI();
