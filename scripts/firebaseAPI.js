@@ -46,6 +46,10 @@ class FirebaseAPI {
   }
 
   async getUserLists() {}
+
+  async updateUserData() {
+    // TODO: Get all user data and save localy.
+  }
 }
 
 const firebaseAPI = new FirebaseAPI();
