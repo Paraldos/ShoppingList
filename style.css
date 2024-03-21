@@ -55,6 +55,10 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+.list input {
+  border: none;
+  color: black;
+}
 
 *,
 *::before,
