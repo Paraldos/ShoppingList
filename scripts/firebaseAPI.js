@@ -4,6 +4,7 @@ class FirebaseAPI {
   constructor() {
     this.user = this.getCurrentUser();
     this.lists = this.getListsData();
+    this.userData = this.getUserData();
   }
 
   async login() {
@@ -46,10 +47,6 @@ class FirebaseAPI {
   }
 
   async getUserLists() {}
-
-  async updateUserData() {
-    // TODO: Get all user data and save localy.
-  }
 }
 
 const firebaseAPI = new FirebaseAPI();
