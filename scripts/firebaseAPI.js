@@ -2,9 +2,9 @@ import { db, auth } from "./firebase.js";
 
 class FirebaseAPI {
   constructor() {
-    this.user = this.getCurrentUser();
-    this.lists = this.getListsData();
-    this.userData = this.getUserData();
+    this.user = null;
+    this.listsData = null;
+    this.userData = null;
   }
 
   async login() {
@@ -45,8 +45,6 @@ class FirebaseAPI {
     const lists = await this.read("lists/");
     return lists;
   }
-
-  async getUserLists() {}
 }
 
 const firebaseAPI = new FirebaseAPI();
