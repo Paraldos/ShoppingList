@@ -10,11 +10,13 @@ export default class Lists {
   init() {
     this.lists.innerHTML = "";
     firebaseAPI.lists.forEach((list) => {
-      this.addList(list);
+      let newList = this.createList(list);
+      const addItemBtn = newList.querySelector(".list__add-item-btn");
+      addItemBtn.addEventListener("click", () => this.addItem(list));
     });
   }
 
-  addList(list) {
+  createList(list) {
     console.log(list);
     const newList = document.createElement("section");
     newList.classList.add("list", "container");
@@ -32,5 +34,16 @@ export default class Lists {
       <ul></ul>
     `;
     this.lists.appendChild(newList);
+    return newList;
+  }
+
+  addItem(list) {
+    list.items = list.items || [];
+    list.items.push({
+      name: "New Item",
+      quantity: 1,
+      checked: false,
+    });
+    firebaseAPI.write(`lists/${list.id}`, list);
   }
 }
