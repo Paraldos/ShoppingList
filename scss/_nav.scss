@@ -11,3 +11,11 @@
   background-color: var(--color-navbar__background);
   border-top: 3px solid var(--color-navbar__border);
 }
+
+.nav__btn {
+  i {
+    &::before {
+      font-size: 1.5rem;
+    }
+  }
+}

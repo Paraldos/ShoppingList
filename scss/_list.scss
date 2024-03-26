@@ -1,6 +1,12 @@
 .list {
-  background-color: red;
   margin-bottom: 10px;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 30px;
+    margin: 10px;
+  }
 
   &__element {
     display: grid;

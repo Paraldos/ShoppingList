@@ -15,7 +15,7 @@
 }
 
 button {
-  --transition-time: 0.2s;
+  --transition-time: 0.1s;
   color: var(--color-btn__text);
   background-color: transparent;
   display: flex;
@@ -26,15 +26,13 @@ button {
   box-shadow: none;
   border: none;
   cursor: pointer;
+  margin: 5px;
 }
 button i {
   transition: transform var(--transition-time) ease-in-out;
 }
-button i::before {
-  font-size: 1.5rem;
-}
 button:hover i {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 
 .container {
@@ -45,8 +43,13 @@ button:hover i {
 }
 
 .list {
-  background-color: red;
   margin-bottom: 10px;
+}
+.list__header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 30px;
+  margin: 10px;
 }
 .list__element {
   display: grid;
@@ -101,6 +104,10 @@ main {
   gap: 40px;
   background-color: var(--color-navbar__background);
   border-top: 3px solid var(--color-navbar__border);
+}
+
+.nav__btn i::before {
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
