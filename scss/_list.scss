@@ -1,17 +1,17 @@
 .list {
-  margin-bottom: 10px;
+  --gap: 30px;
 
   &__header {
     display: grid;
     grid-template-columns: 1fr auto auto;
-    gap: 30px;
+    gap: var(--gap);
     margin: 10px;
   }
 
-  &__element {
+  &__item {
     display: grid;
-    grid-template-columns: 60px 1fr 30px 30px;
-    gap: 30px;
+    grid-template-columns: 30px 60px 1fr 30px;
+    gap: var(--gap);
     margin: 10px;
   }
 

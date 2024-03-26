@@ -43,18 +43,18 @@ button:hover i {
 }
 
 .list {
-  margin-bottom: 10px;
+  --gap: 30px;
 }
 .list__header {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  gap: 30px;
+  gap: var(--gap);
   margin: 10px;
 }
-.list__element {
+.list__item {
   display: grid;
-  grid-template-columns: 60px 1fr 30px 30px;
-  gap: 30px;
+  grid-template-columns: 30px 60px 1fr 30px;
+  gap: var(--gap);
   margin: 10px;
 }
 .list__multiplier {
