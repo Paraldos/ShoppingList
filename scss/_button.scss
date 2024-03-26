@@ -7,17 +7,25 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 100%;
-  width: fit-content;
   aspect-ratio: 1 / 1;
 
   box-shadow: none;
   border: none;
   cursor: pointer;
 
-  transition: transform var(--transition-time) ease-in-out;
+  i {
+    transition: transform var(--transition-time) ease-in-out;
+
+    &::before {
+      font-size: 1.5rem;
+    }
+  }
 
   &:hover {
-    transform: scale(1.5);
+    i {
+      transform: scale(1.5);
+    }
   }
 }
