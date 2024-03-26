@@ -1,13 +1,37 @@
 import { db, auth } from "./firebase.js";
 
 class FirebaseAPI {
-  constructor() {}
-
+  // ============================================= basics
   async read(path) {
     const snapshot = await db.ref(path).once("value");
     return snapshot.val();
   }
 
+  async write(path, data) {
+    await db.ref(path).set(data);
+  }
+
+  // ============================================= lists
+  async newList() {
+    const ref = db.ref("lists").push();
+    const list = {
+      title: "New List",
+      id: ref.key,
+      items: [],
+    };
+    await ref.set(list);
+    this.lists.push(list);
+    this.addListToUser(ref.key);
+    document.dispatchEvent(new CustomEvent("newListAdded"));
+  }
+
+  addListToUser(listId) {
+    this.user.subscribedLists = this.user.subscribedLists || [];
+    this.user.subscribedLists[listId] = true;
+    this.write(`users/${this.user.userId}`, this.user);
+  }
+
+  // ============================================= login
   async login() {
     const provider = new firebase.auth.GoogleAuthProvider();
     try {
@@ -21,6 +45,7 @@ class FirebaseAPI {
     }
   }
 
+  // ============================================= init data
   async initLocalData() {
     await this.getUser();
     await this.getLists();
