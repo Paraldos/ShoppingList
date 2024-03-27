@@ -71,5 +71,6 @@ export default class List {
       checked: false,
     });
     firebaseAPI.write(`lists/${this.listInfo.id}`, this.listInfo);
+    this.update();
   }
 }

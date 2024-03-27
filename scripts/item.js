@@ -1,3 +1,5 @@
+import firebaseAPI from "./firebaseAPI.js";
+
 export default class Item {
   constructor(item, listItems) {
     this.text = item.text;
@@ -38,5 +40,10 @@ export default class Item {
     this.deleteBtn = document.createElement("button");
     this.deleteBtn.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
     this.wrapper.appendChild(this.deleteBtn);
+    this.deleteBtn.addEventListener("click", () => this.onDeleteBtn());
+  }
+
+  onDeleteBtn() {
+    firebaseAPI.write(`lists/${this.listInfo.id}`, this.listInfo);
   }
 }
