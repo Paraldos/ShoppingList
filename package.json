@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "scss": "sass --watch scss/style.scss:style.css"
+    "start": "sass --watch scss/style.scss:style.css"
   },
   "keywords": [],
   "author": "",

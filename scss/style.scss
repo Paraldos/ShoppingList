@@ -1,7 +1,4 @@
-@import "variables";
-@import "button";
-@import "container";
-@import "list";
-@import "root";
-@import "main";
-@import "nav";
+@import "variables.scss";
+@import "./elements/root.scss";
+@import "./elements/button.scss";
+@import "./nodetypes/navbar.scss";
