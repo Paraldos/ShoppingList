@@ -1,15 +1,18 @@
+import Database from "./scripts/Database.js";
 import ListItem from "./scripts/ListItem.js";
-import List from "./scripts/List.js";
+const main = document.querySelector("main");
 
-let lists = [
-  new List("1", "Groceries", [
-    new ListItem(1, "Milk", false),
-    new ListItem(1, "Eggs", false),
-  ]),
-  new List("2", "To Do", [
-    new ListItem(1, "Laundry", false),
-    new ListItem(1, "Dishes", false),
-  ]),
-];
+Database.forEach((list) => {
+  const listHtmlElement = document.createElement("div");
+  listHtmlElement.classList.add("list");
+  main.appendChild(listHtmlElement);
 
-console.log(lists);
+  const listTitle = document.createElement("h2");
+  listTitle.textContent = list.title;
+  listHtmlElement.appendChild(listTitle);
+
+  list.items.forEach((item) => {
+    const element = new ListItem(item);
+    listHtmlElement.appendChild(element.element);
+  });
+});
