@@ -2,7 +2,6 @@ class List {
   initList(list) {
     const wrapper = this.createWrapper(list.title);
     const container = this.createContainer(wrapper);
-    this.createContainerLabels(container);
     list.items.map((item) => {
       this.createContainerItem(item, container);
     });
@@ -23,23 +22,12 @@ class List {
     return container;
   }
 
-  createContainerLabels(container) {
-    container.innerHTML = `
-      <li>
-        <p>Menge</p>
-        <p>Einheit</p>
-        <p>Artikel</p>
-        <p>Erledigt</p>
-      </li>
-    `;
-  }
-
   createContainerItem(item, container) {
     const containerItem = document.createElement("li");
     containerItem.innerHTML = `
       <input value=${item.amount} type='number' />
       <select name='type'>
-        <option value='st'>stück</option>
+        <option value='stk'>stk</option>
         <option value='kg'>kg</option>
         <option value='g'>g</option>
         <option value='l'>l</option>

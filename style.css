@@ -1,17 +1,15 @@
 * {
   --nav-height: 80px;
-  --color-100: #363062;
-  --color-200: #435585;
-  --color-300: #818fb4;
-  --color-400: #f5e8c7;
-  --color-main__background: var(--color-200);
+  --color-100: #f4f4f2;
+  --color-200: #e8e8e8;
+  --color-300: #bbbfca;
+  --color-400: #495464;
+  --color-main__background: var(--color-100);
   --color-main__text: var(--color-400);
-  --color-btn__text: var(--color-400);
-  --color-navbar__background: var(--color-100);
+  --color-main__border: var(--color-300);
+  --color-main__border--focus: var(--color-400);
+  --color-navbar__background: var(--color-200);
   --color-navbar__border: var(--color-400);
-  --color-lists__background: var(--color-300);
-  --color-lists__new-btn-background: var(--color-400);
-  --color-lists__new-btn-fill: var(--color-200);
 }
 
 *,
@@ -25,7 +23,9 @@
 }
 
 body {
-  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 16px;
   scroll-behavior: smooth;
   background-color: var(--color-main__background);
 }
@@ -58,6 +58,8 @@ button:hover i {
 h2 {
   font-size: 1.4rem;
   text-transform: uppercase;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .nav {
@@ -80,6 +82,8 @@ h2 {
 
 .list {
   padding: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 .list ul {
   list-style: none;
@@ -90,16 +94,21 @@ h2 {
 .list li {
   display: grid;
   grid-template-columns: 2fr 2fr 7fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 .list select,
 .list option,
 .list input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 0;
-  color: black;
+  padding: 4px;
+  border: 1px solid var(--color-main__border);
+  border-radius: 5px;
+}
+.list select:focus,
+.list option:focus,
+.list input:focus {
+  outline: none;
+  border-color: var(--color-main__border--focus);
 }
 
 /*# sourceMappingURL=style.css.map */
