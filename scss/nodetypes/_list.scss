@@ -1,4 +1,5 @@
 .list {
+  position: relative;
   padding: 20px;
   max-width: 800px;
   margin: auto;
@@ -28,5 +29,15 @@
       outline: none;
       border-color: var(--color-main__border--focus);
     }
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

@@ -12,6 +12,10 @@ class List {
     const wrapper = document.createElement("div");
     wrapper.classList.add("list");
     wrapper.innerHTML = `<h2>${title}</h2>`;
+    wrapper.innerHTML += `
+      <button class="list__button">
+        <i class="fa-solid fa-qrcode"></i>
+      </button>`;
     return wrapper;
   }
 
