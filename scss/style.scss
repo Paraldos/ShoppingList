@@ -1,4 +1,8 @@
 @import "variables.scss";
+// elements
 @import "./elements/root.scss";
 @import "./elements/button.scss";
+@import "./elements/header.scss";
+// nodetypes
 @import "./nodetypes/navbar.scss";
+@import "./nodetypes/list.scss";

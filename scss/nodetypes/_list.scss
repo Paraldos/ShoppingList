@@ -1,0 +1,26 @@
+.list {
+  padding: 20px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 2fr 2fr 7fr 1fr;
+    gap: 20px;
+  }
+
+  select,
+  option,
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    color: black;
+  }
+}
