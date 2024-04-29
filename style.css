@@ -120,4 +120,18 @@ h2 {
   right: 0;
 }
 
+.list-item {
+  position: relative;
+}
+.list-item--checked hr {
+  display: block !important;
+}
+.list-item hr {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: calc(91.6666666667% + 20px);
+}
+
 /*# sourceMappingURL=style.css.map */
