@@ -1,5 +1,6 @@
 import Database from "./Database.js";
 import ListItem from "./ListItem.js";
+import DeleteListModal from "./deletListModal.js";
 
 export default class List {
   constructor(listId) {
@@ -37,6 +38,9 @@ export default class List {
     const button = document.createElement("button");
     button.classList.add("list__button", "list__delete-button");
     button.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+    button.addEventListener("click", () => {
+      new DeleteListModal(this.list.id);
+    });
     this.wrapper.appendChild(button);
   }
 
