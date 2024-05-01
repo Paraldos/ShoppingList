@@ -5,30 +5,28 @@ class Database {
   }
 
   save() {
-    this.saveToLocalStorage();
+    localStorage.setItem("lists", JSON.stringify(this.lists));
   }
 
   load() {
-    this.lists = this.loadFromLocalStorage();
+    const loadedData = JSON.parse(localStorage.getItem("lists"));
+    this.lists = loadedData ? { ...loadedData } : {};
   }
 
-  loadFromLocalStorage() {
-    const lists = JSON.parse(localStorage.getItem("lists"));
-    return lists ? lists : [];
-  }
-
-  saveToLocalStorage() {
-    localStorage.setItem("lists", JSON.stringify(this.lists));
+  deleteList(listId) {
+    delete this.lists[listId];
+    this.save();
   }
 
   newList(title = "New List", items = []) {
     const id = this.generateUniqueId();
     this.lists[id] = { id, title, items };
+    this.save();
   }
 
   newListItem(amount = 0, text = "", checked = false) {
     const id = this.generateUniqueId();
-    return new Object({ id, amount, text, checked });
+    return { id, amount, text, checked };
   }
 
   generateUniqueId() {

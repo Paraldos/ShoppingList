@@ -41,7 +41,7 @@ export default class Modal {
   addXButton() {
     const xButton = document.createElement("button");
     xButton.classList.add("modal__x-button");
-    xButton.innerHTML = SVG.xmark();
+    xButton.innerHTML = SVG.circleX();
     xButton.addEventListener("click", () => this.removeModal());
     this.modalBody.appendChild(xButton);
   }
