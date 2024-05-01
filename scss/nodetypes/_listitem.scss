@@ -1,0 +1,17 @@
+.list-item {
+  position: relative;
+
+  &--checked {
+    hr {
+      display: block !important;
+    }
+  }
+
+  hr {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: calc((100% / 12 * 11) + 20px);
+  }
+}
