@@ -24,6 +24,7 @@ export default class DeleteListModal extends Modal {
     btn.innerHTML = SVG.circleCheck();
     btn.addEventListener("click", () => {
       Database.deleteList(this.listId);
+      document.dispatchEvent(new Event("listsUpdated"));
       this.removeModal();
     });
     return btn;

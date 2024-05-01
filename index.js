@@ -9,6 +9,7 @@ class App {
       Database.newList();
       this.renderLists();
     });
+    document.addEventListener("listsUpdated", () => this.renderLists());
     this.renderLists();
   }
 

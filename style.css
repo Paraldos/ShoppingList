@@ -112,16 +112,21 @@ h2 {
   outline: none;
   border-color: var(--color-main__border--focus);
 }
-.list__button {
-  width: 40px;
-  height: 40px;
-  margin: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+.list__header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.list__delete-button {
-  right: 50px;
+.list__title {
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto 0 0;
+}
+.list__button {
+  height: 40px;
 }
 
 .list-item {
