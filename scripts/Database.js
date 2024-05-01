@@ -1,6 +1,10 @@
 class Database {
   constructor() {
-    this.lists = this.loadFromLocalStorage();
+    this.lists = {};
+    this.newList("Test", [
+      this.newListItem(1, "Mjölk", false),
+      this.newListItem(1, "Bröd", true),
+    ]);
   }
 
   loadFromLocalStorage() {
@@ -12,12 +16,17 @@ class Database {
     localStorage.setItem("lists", JSON.stringify(this.lists));
   }
 
-  newList(id = "", title = "", items = []) {
-    return new Object({ id, title, items });
+  newList(title = "", items = []) {
+    const id = this.generateUniqueId();
+    this.lists[id] = { id, title, items };
   }
 
   newListItem(amount = 0, text = "", checked = false) {
     return new Object({ amount, text, checked });
+  }
+
+  generateUniqueId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
   }
 }
 

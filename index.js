@@ -1,7 +1,6 @@
 import Database from "./scripts/Database.js";
 import List from "./scripts/List.js";
-const main = document.querySelector("main");
 
-Database.lists.forEach((list) => {
-  main.appendChild(List.initList(list));
+Object.keys(Database.lists).forEach((listId) => {
+  new List(listId);
 });
