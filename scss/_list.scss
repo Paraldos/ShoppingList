@@ -11,26 +11,6 @@
     gap: 10px;
   }
 
-  li {
-    display: grid;
-    grid-template-columns: 2fr 2fr 7fr 1fr;
-    gap: 10px;
-  }
-
-  select,
-  option,
-  input {
-    width: 100%;
-    padding: 4px;
-    border: 1px solid var(--color-main__border);
-    border-radius: 5px;
-
-    &:focus {
-      outline: none;
-      border-color: var(--color-main__border--focus);
-    }
-  }
-
   &__header {
     grid-area: header;
     display: flex;

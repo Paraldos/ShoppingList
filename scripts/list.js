@@ -1,6 +1,7 @@
 import Database from "./Database.js";
 import ListItem from "./ListItem.js";
 import DeleteListModal from "./deletListModal.js";
+import ChangeListTitleModal from "./ChangeListTitleModal.js";
 import SVG from "./svg.js";
 
 export default class List {
@@ -10,11 +11,14 @@ export default class List {
     this.list = this.createList();
     this.header = this.addHeader();
     this.addQRCodeButton();
-    this.addTitle();
+    this.title = this.addTitle();
     this.addDeleteButton();
     this.addPlusBtn();
     this.itemContainer = this.addItemContainer();
     this.dbEntry.items.map((item) => new ListItem(item, this.itemContainer));
+    document.addEventListener("updateListTitle", () => {
+      this.title.innerHTML = this.dbEntry.title;
+    });
   }
 
   createList() {
@@ -35,7 +39,11 @@ export default class List {
     const title = document.createElement("h2");
     title.classList.add("list__title");
     title.innerHTML = this.dbEntry.title;
+    title.addEventListener("click", () => {
+      new ChangeListTitleModal(this.dbEntry.id);
+    });
     this.header.appendChild(title);
+    return title;
   }
 
   addQRCodeButton() {

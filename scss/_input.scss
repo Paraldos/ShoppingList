@@ -1,0 +1,12 @@
+select,
+input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid var(--color-main__border);
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-main__border--focus);
+  }
+}

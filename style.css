@@ -62,6 +62,19 @@ h2 {
   margin-bottom: 5px;
 }
 
+select,
+input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid var(--color-main__border);
+  border-radius: 5px;
+}
+select:focus,
+input:focus {
+  outline: none;
+  border-color: var(--color-main__border--focus);
+}
+
 .nav {
   position: absolute;
   left: 0;
@@ -93,25 +106,6 @@ h2 {
   flex-direction: column;
   gap: 10px;
 }
-.list li {
-  display: grid;
-  grid-template-columns: 2fr 2fr 7fr 1fr;
-  gap: 10px;
-}
-.list select,
-.list option,
-.list input {
-  width: 100%;
-  padding: 4px;
-  border: 1px solid var(--color-main__border);
-  border-radius: 5px;
-}
-.list select:focus,
-.list option:focus,
-.list input:focus {
-  outline: none;
-  border-color: var(--color-main__border--focus);
-}
 .list__header {
   grid-area: header;
   display: flex;
@@ -131,9 +125,9 @@ h2 {
 
 .list-item {
   position: relative;
-}
-.list-item--checked hr {
-  display: block !important;
+  display: grid;
+  grid-template-columns: 60px auto 1fr 40px;
+  gap: 10px;
 }
 .list-item hr {
   display: none;
@@ -141,6 +135,9 @@ h2 {
   top: 50%;
   left: -10px;
   width: calc(91.6666666667% + 20px);
+}
+.list-item--checked hr {
+  display: block;
 }
 
 .modal__overlay {

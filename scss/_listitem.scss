@@ -1,11 +1,8 @@
 .list-item {
   position: relative;
-
-  &--checked {
-    hr {
-      display: block !important;
-    }
-  }
+  display: grid;
+  grid-template-columns: 60px auto 1fr 40px;
+  gap: 10px;
 
   hr {
     display: none;
@@ -13,5 +10,11 @@
     top: 50%;
     left: -10px;
     width: calc((100% / 12 * 11) + 20px);
+  }
+
+  &--checked {
+    hr {
+      display: block;
+    }
   }
 }
