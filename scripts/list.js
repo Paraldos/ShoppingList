@@ -5,21 +5,31 @@ export default class List {
   constructor(listId) {
     this.main = document.querySelector("main");
     this.list = Database.lists[listId];
-    this.wrapper = this.createWrapper(this.list.title);
+    this.wrapper = this.createWrapper();
+    this.addHeader();
+    this.addQRCodeButton();
     this.container = this.createContainer();
     this.list.items.map((item) => new ListItem(item, this.container));
   }
 
-  createWrapper(title) {
+  createWrapper() {
     const wrapper = document.createElement("div");
     wrapper.classList.add("list");
-    wrapper.innerHTML = `
-      <h2>${title}</h2>
-      <button class="list__button">
-        <i class="fa-solid fa-qrcode"></i>
-      </button>`;
     this.main.appendChild(wrapper);
     return wrapper;
+  }
+
+  addHeader() {
+    const header = document.createElement("h2");
+    header.textContent = this.list.title;
+    this.wrapper.appendChild(header);
+  }
+
+  addQRCodeButton() {
+    const button = document.createElement("button");
+    button.classList.add("list__button", "list__qrcode-button");
+    button.innerHTML = `<i class="fa-solid fa-qrcode"></i>`;
+    this.wrapper.appendChild(button);
   }
 
   createContainer() {

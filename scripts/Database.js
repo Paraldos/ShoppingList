@@ -21,7 +21,7 @@ class Database {
     localStorage.setItem("lists", JSON.stringify(this.lists));
   }
 
-  newList(title = "", items = []) {
+  newList(title = "New List", items = []) {
     const id = this.generateUniqueId();
     this.lists[id] = { id, title, items };
   }
