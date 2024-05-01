@@ -5,18 +5,31 @@ export default class ListItem {
     this.item = item;
     this.container = container;
     this.wrapper = this.createWrapper();
+    this.createHr();
     this.amount = this.createAmount();
     this.type = this.createType();
     this.text = this.createText();
     this.checkbox = this.createCheckbox();
+    this.update();
+  }
+
+  update() {
+    this.wrapper.classList.toggle("list-item--checked", this.item.checked);
+    this.amount.disabled = this.item.checked;
+    this.type.disabled = this.item.checked;
+    this.text.disabled = this.item.checked;
   }
 
   createWrapper() {
     const wrapper = document.createElement("li");
     wrapper.classList.add("list-item");
-    wrapper.innerHTML = `<hr/>`;
     this.container.appendChild(wrapper);
     return wrapper;
+  }
+
+  createHr() {
+    const hr = document.createElement("hr");
+    this.wrapper.appendChild(hr);
   }
 
   createAmount() {
@@ -53,9 +66,12 @@ export default class ListItem {
   createCheckbox() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.checked = this.item.checked;
     checkbox.classList.add("list-item__checkbox");
     checkbox.addEventListener("change", (e) => {
-      this.wrapper.classList.toggle("list-item--checked", e.target.checked);
+      this.item.checked = e.target.checked;
+      this.update();
+      Database.save();
     });
     this.wrapper.appendChild(checkbox);
     return checkbox;

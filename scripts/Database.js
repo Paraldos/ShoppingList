@@ -1,10 +1,15 @@
 class Database {
   constructor() {
     this.lists = {};
-    this.newList("Test", [
-      this.newListItem(1, "Mjölk", false),
-      this.newListItem(1, "Bröd", true),
-    ]);
+    this.load();
+  }
+
+  save() {
+    this.saveToLocalStorage();
+  }
+
+  load() {
+    this.lists = this.loadFromLocalStorage();
   }
 
   loadFromLocalStorage() {
@@ -22,7 +27,8 @@ class Database {
   }
 
   newListItem(amount = 0, text = "", checked = false) {
-    return new Object({ amount, text, checked });
+    const id = this.generateUniqueId();
+    return new Object({ id, amount, text, checked });
   }
 
   generateUniqueId() {
