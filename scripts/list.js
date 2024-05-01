@@ -1,6 +1,7 @@
 import Database from "./Database.js";
 import ListItem from "./ListItem.js";
 import DeleteListModal from "./deletListModal.js";
+import SVG from "./svg.js";
 
 export default class List {
   constructor(listId) {
@@ -30,14 +31,14 @@ export default class List {
   addQRCodeButton() {
     const button = document.createElement("button");
     button.classList.add("list__button", "list__qrcode-button");
-    button.innerHTML = `<i class="fa-solid fa-qrcode"></i>`;
+    button.innerHTML = SVG.qrCode();
     this.wrapper.appendChild(button);
   }
 
   addDeleteButton() {
     const button = document.createElement("button");
     button.classList.add("list__button", "list__delete-button");
-    button.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+    button.innerHTML = SVG.trash();
     button.addEventListener("click", () => {
       new DeleteListModal(this.list.id);
     });

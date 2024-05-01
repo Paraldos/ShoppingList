@@ -1,8 +1,11 @@
+import SVG from "./svg.js";
+
 export default class Modal {
   constructor(xButton = false, canBeEscaped = true) {
     this.canBeEscaped = canBeEscaped;
     this.overlay = this.addOverlay();
     this.modalBody = this.addModalBody();
+    this.contentContainer = this.addContentContainer();
     if (xButton) this.addXButton();
   }
 
@@ -28,10 +31,17 @@ export default class Modal {
     return modalBody;
   }
 
+  addContentContainer() {
+    const contentContainer = document.createElement("div");
+    contentContainer.classList.add("modal__content-container");
+    this.modalBody.appendChild(contentContainer);
+    return contentContainer;
+  }
+
   addXButton() {
     const xButton = document.createElement("button");
     xButton.classList.add("modal__x-button");
-    xButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    xButton.innerHTML = SVG.xmark();
     xButton.addEventListener("click", () => this.removeModal());
     this.modalBody.appendChild(xButton);
   }

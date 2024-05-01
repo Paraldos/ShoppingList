@@ -36,18 +36,21 @@ body {
 
 button {
   --transition-time: 0.1s;
-  color: var(--color-btn__text);
-  background-color: transparent;
-  height: 100%;
-  aspect-ratio: 1/1;
   box-shadow: none;
   border: none;
+  background-color: transparent;
+  max-height: 100%;
+  aspect-ratio: 1/1;
   cursor: pointer;
+  padding: 5px;
 }
-button i {
+button svg {
+  fill: var(--color-main__text);
+  max-width: 100%;
+  max-height: 100%;
   transition: transform var(--transition-time) ease-in-out;
 }
-button:hover i {
+button:hover svg {
   transform: scale(1.3);
 }
 
@@ -68,12 +71,13 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 15px 0;
   background-color: var(--color-navbar__background);
   border-top: 3px solid var(--color-navbar__border);
 }
 
-.nav__btn i::before {
-  font-size: 1.5rem;
+.nav__btn {
+  height: 100%;
 }
 
 .list {
@@ -138,6 +142,7 @@ h2 {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -155,7 +160,6 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  cursor: pointer;
   background-color: var(--color-300);
 }
 
