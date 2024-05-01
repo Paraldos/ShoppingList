@@ -1,23 +1,24 @@
-class ListItem {
-  constructor(amount = 0, text = "", checked = false) {
-    this.amount = amount;
-    this.text = text;
-    this.checked = checked;
+class Database {
+  constructor() {
+    this.lists = this.loadFromLocalStorage();
   }
-}
-class List {
-  constructor(id = "", title = "", items = []) {
-    this.id = id;
-    this.title = title;
-    this.items = items;
+
+  loadFromLocalStorage() {
+    const lists = JSON.parse(localStorage.getItem("lists"));
+    return lists ? lists : [];
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem("lists", JSON.stringify(this.lists));
+  }
+
+  newList(id = "", title = "", items = []) {
+    return new Object({ id, title, items });
+  }
+
+  newListItem(amount = 0, text = "", checked = false) {
+    return new Object({ amount, text, checked });
   }
 }
 
-const Database = [
-  new List("1", "Groceries", [
-    new ListItem(1, "Milk", false),
-    new ListItem(1, "Eggs", false),
-  ]),
-  new List("2", "To Do", []),
-];
-export default Database;
+export default new Database();
