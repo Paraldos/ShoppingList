@@ -137,4 +137,32 @@ h2 {
   width: calc(91.6666666667% + 20px);
 }
 
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__body {
+  background-color: var(--color-200);
+  padding: 30px;
+  max-height: 60vh;
+  max-width: 80vw;
+  position: relative;
+}
+.modal__x-button {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50px;
+  padding-top: 1px;
+  cursor: pointer;
+  background-color: var(--color-300);
+}
+
 /*# sourceMappingURL=style.css.map */

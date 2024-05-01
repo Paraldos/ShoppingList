@@ -1,9 +1,10 @@
 @import "variables.scss";
 // elements
-@import "./elements/root.scss";
-@import "./elements/button.scss";
-@import "./elements/header.scss";
+@import "./root.scss";
+@import "./button.scss";
+@import "./header.scss";
 // nodetypes
-@import "./nodetypes/navbar.scss";
-@import "./nodetypes/list.scss";
-@import "./nodetypes/listitem.scss";
+@import "./navbar.scss";
+@import "./list.scss";
+@import "./listitem.scss";
+@import "./modal.scss";

@@ -1,0 +1,31 @@
+.modal {
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    background-color: var(--color-200);
+    padding: 30px;
+    max-height: 60vh;
+    max-width: 80vw;
+    position: relative;
+  }
+
+  &__x-button {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border-radius: 50px;
+    padding-top: 1px;
+    cursor: pointer;
+    background-color: var(--color-300);
+  }
+}
