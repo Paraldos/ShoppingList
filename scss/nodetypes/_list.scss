@@ -35,9 +35,12 @@
     width: 40px;
     height: 40px;
     margin: 10px;
-
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  &__delete-button {
+    right: 50px;
   }
 }

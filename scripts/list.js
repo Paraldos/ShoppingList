@@ -8,6 +8,7 @@ export default class List {
     this.wrapper = this.createWrapper();
     this.addHeader();
     this.addQRCodeButton();
+    this.addDeleteButton();
     this.container = this.createContainer();
     this.list.items.map((item) => new ListItem(item, this.container));
   }
@@ -29,6 +30,13 @@ export default class List {
     const button = document.createElement("button");
     button.classList.add("list__button", "list__qrcode-button");
     button.innerHTML = `<i class="fa-solid fa-qrcode"></i>`;
+    this.wrapper.appendChild(button);
+  }
+
+  addDeleteButton() {
+    const button = document.createElement("button");
+    button.classList.add("list__button", "list__delete-button");
+    button.innerHTML = `<i class="fa-solid fa-trash"></i>`;
     this.wrapper.appendChild(button);
   }
 

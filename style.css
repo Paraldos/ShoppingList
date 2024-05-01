@@ -119,6 +119,9 @@ h2 {
   top: 0;
   right: 0;
 }
+.list__delete-button {
+  right: 50px;
+}
 
 .list-item {
   position: relative;
