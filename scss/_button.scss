@@ -1,20 +1,12 @@
 button {
   --transition-time: 0.1s;
-
   color: var(--color-btn__text);
   background-color: transparent;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   height: 100%;
   aspect-ratio: 1 / 1;
-
   box-shadow: none;
   border: none;
   cursor: pointer;
-  margin: 5px;
 
   i {
     transition: transform var(--transition-time) ease-in-out;
