@@ -5,7 +5,6 @@ export default class ListItem {
     this.item = item;
     this.container = container;
     this.wrapper = this.createWrapper();
-    this.createHr();
     this.amount = this.createAmount();
     this.type = this.createType();
     this.text = this.createText();
@@ -18,18 +17,15 @@ export default class ListItem {
     this.amount.disabled = this.item.checked;
     this.type.disabled = this.item.checked;
     this.text.disabled = this.item.checked;
+    Database.save();
   }
 
   createWrapper() {
     const wrapper = document.createElement("li");
     wrapper.classList.add("list-item");
+    wrapper.innerHTML = `<hr/>`;
     this.container.appendChild(wrapper);
     return wrapper;
-  }
-
-  createHr() {
-    const hr = document.createElement("hr");
-    this.wrapper.appendChild(hr);
   }
 
   createAmount() {
@@ -37,6 +33,10 @@ export default class ListItem {
     input.value = this.item.amount;
     input.type = "number";
     input.classList.add("list-item__value");
+    input.addEventListener("input", (e) => {
+      this.item.amount = e.target.value;
+      this.update();
+    });
     this.wrapper.appendChild(input);
     return input;
   }
@@ -50,6 +50,10 @@ export default class ListItem {
       <option value='kg'>kg</option>
       <option value='g'>g</option>
       <option value='l'>l</option>`;
+    input.addEventListener("change", (e) => {
+      this.item.type = e.target.value;
+      this.update();
+    });
     this.wrapper.appendChild(input);
     return input;
   }
@@ -59,6 +63,10 @@ export default class ListItem {
     input.value = this.item.text;
     input.type = "text";
     input.classList.add("list-item__text");
+    input.addEventListener("input", (e) => {
+      this.item.text = e.target.value;
+      this.update();
+    });
     this.wrapper.appendChild(input);
     return input;
   }
@@ -71,7 +79,6 @@ export default class ListItem {
     checkbox.addEventListener("change", (e) => {
       this.item.checked = e.target.checked;
       this.update();
-      Database.save();
     });
     this.wrapper.appendChild(checkbox);
     return checkbox;
