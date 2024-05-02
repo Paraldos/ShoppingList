@@ -9,4 +9,9 @@ input {
     outline: none;
     border-color: var(--color-main__border--focus);
   }
+
+  &:disabled {
+    color: var(--color-main__text--disabled);
+    background-color: transparent;
+  }
 }

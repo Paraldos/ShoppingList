@@ -6,6 +6,7 @@
   --color-400: #495464;
   --color-main__background: var(--color-100);
   --color-main__text: var(--color-400);
+  --color-main__text--disabled: var(--color-300);
   --color-main__border: var(--color-300);
   --color-main__border--focus: var(--color-400);
   --color-navbar__background: var(--color-200);
@@ -73,6 +74,11 @@ select:focus,
 input:focus {
   outline: none;
   border-color: var(--color-main__border--focus);
+}
+select:disabled,
+input:disabled {
+  color: var(--color-main__text--disabled);
+  background-color: transparent;
 }
 
 .nav {
