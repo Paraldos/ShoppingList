@@ -3,6 +3,7 @@ import ListItem from "./ListItem.js";
 import DeleteListModal from "./deletListModal.js";
 import ChangeListTitleModal from "./ChangeListTitleModal.js";
 import SVG from "./svg.js";
+import QRCodeModal from "./QRModal.js";
 
 export default class List {
   constructor(listId) {
@@ -50,6 +51,9 @@ export default class List {
     const button = document.createElement("button");
     button.classList.add("list__button", "list__qrcode-button");
     button.innerHTML = SVG.qrCode();
+    button.addEventListener("click", () => {
+      new QRCodeModal(this.dbEntry.id);
+    });
     this.header.appendChild(button);
   }
 
