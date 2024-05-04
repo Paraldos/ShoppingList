@@ -5,6 +5,5 @@ import SVG from "./svg.js";
 export default class QRCodeModal extends Modal {
   constructor(listId) {
     super(true);
-    console.log(listId);
   }
 }
