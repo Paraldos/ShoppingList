@@ -15,4 +15,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+nav {
+  height: var(--header_height);
+  background-color: var(--color_1);
+}
+</style>

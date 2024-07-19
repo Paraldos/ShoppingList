@@ -23,3 +23,21 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+:root {
+  --color_1: #201e43;
+  --color_2: #134b70;
+  --color_3: #508c9b;
+  --color_4: #eeeeee;
+
+  --header_height: 100px;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</style>
