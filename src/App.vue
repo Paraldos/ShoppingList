@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
+import Navbar from "./components/navbar/Navbar.vue";
 import ShoppingList from "./components/ShoppingList.vue";
 
 export default {
