@@ -31,7 +31,7 @@ export default {
   --color_3: #508c9b;
   --color_4: #eeeeee;
 
-  --header_height: 100px;
+  --header_height: 75px;
 }
 
 body {
@@ -39,5 +39,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--color_4);
 }
 </style>
