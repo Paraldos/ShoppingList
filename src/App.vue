@@ -42,4 +42,21 @@ body {
   box-sizing: border-box;
   background-color: var(--color_4);
 }
+
+.btn {
+  background-color: var(--color_2);
+  color: var(--color_4);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  svg {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background-color: var(--color_3);
+  }
+}
 </style>
