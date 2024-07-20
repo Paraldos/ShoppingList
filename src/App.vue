@@ -14,13 +14,7 @@ export default {
     ShoppingList,
   },
   data() {
-    return {
-      ShoppingListItems: [
-        { id: 1, name: "Milk", amount: 1 },
-        { id: 2, name: "Bread", amount: 2 },
-        { id: 3, name: "Cheese", amount: 3 },
-      ],
-    };
+    return {};
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ dropdown__active: active }" class="dropdown">
+  <div class="dropdown" :class="{ dropdown__active: dropdown_is_active }">
     <button class="btn dropdown__btn" @click="toggle">
       Dropdown
       <font-awesome-icon :icon="['fas', 'chevron-down']" />
@@ -17,12 +17,19 @@ export default {
   name: "Dropdown",
   data() {
     return {
-      active: false,
+      dropdown_is_active: false,
     };
+  },
+  props: {
+    optionItems: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
     toggle() {
-      this.active = !this.active;
+      console.log("toggle");
+      this.dropdown_is_active = !this.dropdown_is_active;
     },
   },
 };

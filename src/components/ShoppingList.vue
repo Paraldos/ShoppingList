@@ -1,13 +1,7 @@
 <template>
   <div class="ShoppingList">
-    <ul>
-      <li v-for="item in ShoppingListItems" :key="item.id">
-        <input type="number" :value="item.amount" />
-        <input type="text" :value="item.name" />
-        <input type="checkbox" />
-      </li>
-    </ul>
-    <Dropdown />
+    <h1>ShoppingList</h1>
+    <Dropdown :optionItems="['Option 1', 'Option 2', 'Option 3']" />
   </div>
 </template>
 
@@ -19,8 +13,8 @@ export default {
   components: {
     Dropdown,
   },
-  props: {
-    ShoppingListItems: Array,
+  data() {
+    return {};
   },
 };
 </script>
