@@ -1,4 +1,5 @@
 <template>
+  <h1>Hello</h1>
   <Navbar />
   <ShoppingList :ShoppingListItems="ShoppingListItems" />
 </template>
