@@ -33,13 +33,13 @@ export default {
   width: fit-content;
 }
 
-svg {
-  transform: rotate(180deg);
+.dropdown .dropdown__btn svg {
+  transform: rotate(0deg);
   transition: transform 0.2s;
 }
 
-.dropdown__active svg {
-  transform: rotate(0deg);
+.dropdown.dropdown__active .dropdown__btn svg {
+  transform: rotate(180deg);
 }
 
 .dropdown__options {

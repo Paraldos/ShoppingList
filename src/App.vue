@@ -53,6 +53,7 @@ body {
 
   svg {
     margin-left: 10px;
+    aspect-ratio: 1;
   }
 
   &:hover {
